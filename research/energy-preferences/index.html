@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preference Formation in Energy Production | Kaan Afşar</title>
+  <meta name="description" content="Working paper by Holahan, Farrer, Afsar and Baker: an original survey of 354 Twin Tiers residents on attitudes toward wind and oil and gas development. Under review.">
+  <link rel="canonical" href="https://ekremkaanafsar.github.io/research/energy-preferences/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Preference Formation in Energy Production">
+  <meta property="og:description" content="What drives attitudes toward wind farms and fracking? An original survey of 354 residents along the New York-Pennsylvania border.">
+  <meta property="og:url" content="https://ekremkaanafsar.github.io/research/energy-preferences/">
+  <meta name="theme-color" content="#0b6e69">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script src="/assets/js/site.js" defer></script>
+  <script src="/assets/js/charts.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/" aria-label="Kaan Afşar, home">
+        <img src="/assets/img/favicon.svg" alt="" width="28" height="28"><span>Kaan Afşar</span>
+      </a>
+      <nav aria-label="Main">
+        <ul class="nav">
+          <li><a href="/research/" aria-current="page">Research</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/cv/">CV</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="paper-hero topo">
+      <div class="wrap">
+        <p class="crumbs"><a href="/research/">Research</a> / Working paper</p>
+        <span class="status">Under review</span>
+        <h1 style="margin-top:16px">Preference Formation in Energy Production: A Survey of Wind and Oil/Gas Project Attitudes in the Northeast</h1>
+        <p class="authors">Robert Holahan, Ben Farrer, <strong>Kaan Afsar</strong> and Shambraylan Baker</p>
+        <dl class="glance">
+          <div><dt>Data</dt><dd>Original mail survey, 354 residents</dd></div>
+          <div><dt>Region</dt><dd>Twin Tiers, New York-Pennsylvania border</dd></div>
+          <div><dt>Design</dt><dd>Natural experiment across four county types</dd></div>
+          <div><dt>Methods</dt><dd>Ordered and multinomial logit, in Stata and R</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <div class="wrap article">
+      <nav class="toc" aria-label="On this page">
+        <ol>
+          <li><a href="#question">The question</a></li>
+          <li><a href="#data">Setting and data</a></li>
+          <li><a href="#design">Research design</a></li>
+          <li><a href="#findings">Key findings</a></li>
+          <li><a href="#role">My role</a></li>
+          <li><a href="#status">Status and materials</a></li>
+        </ol>
+      </nav>
+
+      <div class="article-body">
+        <section id="question" aria-labelledby="h-question">
+          <h2 id="h-question">The question</h2>
+          <p>When energy development arrives in a community, what shapes how local landowners feel about it? This paper tests three explanations against each other: the <strong>externalities</strong> of the projects themselves, <strong>partisan cues</strong>, and simple <strong>proximity</strong> to development.</p>
+        </section>
+
+        <section id="data" aria-labelledby="h-data">
+          <h2 id="h-data">Setting and data</h2>
+          <p>The Twin Tiers along the New York-Pennsylvania border are an unusual natural laboratory: wind energy and hydraulic fracturing grew there at the same time. We analyse an <strong>original mail survey of 354 residents</strong> of the region, together with energy, environmental and econometric data from 14 Twin Tiers counties.</p>
+        </section>
+
+        <section id="design" aria-labelledby="h-design">
+          <h2 id="h-design">Research design</h2>
+          <p>Because counties differ in which kinds of development they host, the survey sets up a natural experiment. Residents are compared across counties with <strong>wind only</strong>, <strong>hydrocarbons only</strong>, <strong>both</strong>, and <strong>neither</strong>.</p>
+
+          <figure class="diagram">
+            <svg class="dg" viewBox="0 0 560 390" role="img" aria-labelledby="fig1-t fig1-d">
+              <title id="fig1-t">Four county types in the natural experiment</title>
+              <desc id="fig1-d">A two by two grid. Columns are counties without and with wind development; rows are counties without and with oil and gas development. The four cells are: neither, wind only, hydrocarbons only, and both.</desc>
+              <defs>
+                <g id="turbine" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+                  <line x1="0" y1="30" x2="0" y2="92"/>
+                  <line x1="0" y1="30" x2="0" y2="2"/>
+                  <line x1="0" y1="30" x2="24" y2="44"/>
+                  <line x1="0" y1="30" x2="-24" y2="44"/>
+                  <circle cx="0" cy="30" r="4" fill="currentColor" stroke="none"/>
+                </g>
+                <g id="derrick" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+                  <path d="M-20 92 L0 14 L20 92"/>
+                  <path d="M-12 62 H12 M-16 78 H16 M-8 40 H8"/>
+                  <circle cx="0" cy="10" r="4" fill="currentColor" stroke="none"/>
+                </g>
+              </defs>
+
+              <text x="265" y="26" text-anchor="middle" font-size="16" font-weight="600">No wind</text>
+              <text x="445" y="26" text-anchor="middle" font-size="16" font-weight="600" class="teal">Wind</text>
+              <text x="165" y="128" text-anchor="end" font-size="16" font-weight="600">No oil &amp; gas</text>
+              <text x="165" y="293" text-anchor="end" font-size="16" font-weight="600" class="amber">Oil &amp; gas</text>
+
+              <rect x="180" y="42" width="170" height="155" rx="12" class="box-dash"/>
+              <rect x="360" y="42" width="170" height="155" rx="12" class="box-teal"/>
+              <rect x="180" y="207" width="170" height="155" rx="12" class="box-amber"/>
+              <rect x="360" y="207" width="170" height="155" rx="12" class="box"/>
+
+              <text x="265" y="125" text-anchor="middle" font-size="14" class="sub">no projects</text>
+              <use href="#turbine" x="445" y="62" class="c-teal"/>
+              <use href="#derrick" x="265" y="227" class="c-amber"/>
+              <use href="#turbine" x="415" y="227" class="c-teal"/>
+              <use href="#derrick" x="478" y="227" class="c-amber"/>
+
+              <text x="265" y="183" text-anchor="middle" font-size="15" class="mono-t">Neither</text>
+              <text x="445" y="183" text-anchor="middle" font-size="15" class="mono-t">Wind only</text>
+              <text x="265" y="348" text-anchor="middle" font-size="15" class="mono-t">Hydrocarbons only</text>
+              <text x="445" y="348" text-anchor="middle" font-size="15" class="mono-t">Both</text>
+            </svg>
+            <figcaption>Figure 1. Residents are compared across counties with wind only, hydrocarbons only, both, and neither.</figcaption>
+          </figure>
+
+          <p>We model attitudes toward each type of development with <strong>ordered and multinomial logit</strong> models, alongside t-tests and Wilcoxon rank-sum tests. All statistical analyses are run in Stata and R.</p>
+        </section>
+
+        <section id="findings" aria-labelledby="h-findings">
+          <h2 id="h-findings">Key findings</h2>
+          <div class="finding"><span class="num">01</span><p><strong>Partisanship significantly predicts attitudes toward oil and gas development, but not toward wind energy.</strong></p></div>
+          <div class="finding"><span class="num">02</span><p><strong>Proximity matters more for hydrocarbons than for wind:</strong> county-type effects are stronger for oil and gas development than for wind.</p></div>
+          <figure class="figure-soon" role="group" aria-label="Chart coming soon">
+            <svg class="skeleton" viewBox="0 0 560 230" aria-hidden="true" focusable="false">
+              <line x1="330" y1="8" x2="330" y2="196" class="sk-ref"/>
+              <rect x="20" y="30" width="130" height="12" rx="6" class="sk"/>
+              <rect x="40" y="80" width="110" height="12" rx="6" class="sk"/>
+              <rect x="10" y="130" width="140" height="12" rx="6" class="sk"/>
+              <rect x="50" y="180" width="100" height="12" rx="6" class="sk"/>
+              <line x1="350" y1="36" x2="470" y2="36" class="sk-line"/><circle cx="410" cy="36" r="7" class="sk-strong"/>
+              <line x1="250" y1="86" x2="360" y2="86" class="sk-line"/><circle cx="305" cy="86" r="7" class="sk-strong"/>
+              <line x1="370" y1="136" x2="520" y2="136" class="sk-line"/><circle cx="445" cy="136" r="7" class="sk-strong"/>
+              <line x1="290" y1="186" x2="380" y2="186" class="sk-line"/><circle cx="335" cy="186" r="7" class="sk-strong"/>
+              <rect x="180" y="214" width="34" height="8" rx="4" class="sk"/><rect x="313" y="214" width="34" height="8" rx="4" class="sk"/><rect x="446" y="214" width="34" height="8" rx="4" class="sk"/>
+            </svg>
+            <span class="soon-badge">Chart coming soon</span>
+            <figcaption>Figure 2. Model results for wind and oil and gas attitudes. <span class="tba">Coming soon</span></figcaption>
+          </figure>
+        </section>
+
+        <section id="role" aria-labelledby="h-role">
+          <h2 id="h-role">My role</h2>
+          <ul>
+            <li>Co-leading the survey research with Prof. Robert A. Holahan as a Research Assistant at Binghamton University (since January 2024).</li>
+            <li>Designed, fielded and analysed the 354-respondent survey.</li>
+            <li>Collected and analysed the county-level energy, environmental and econometric data, using ordered logit, multinomial logit, t-tests and Wilcoxon rank-sum tests.</li>
+            <li>I run all of the statistical analyses in Stata and R.</li>
+          </ul>
+        </section>
+
+        <section id="status" aria-labelledby="h-status">
+          <h2 id="h-status">Status and materials</h2>
+          <div class="callout">
+            <p><strong>Under review.</strong> Presented at the Midwest Political Science Association (MPSA) Annual Meeting, Chicago, IL, April 2026.</p>
+          </div>
+        </section>
+
+        <p><a href="/research/">&larr; All research</a> &nbsp;&middot;&nbsp; <a href="/research/mineral-holdouts/">Next: Hold Outs in Mineral Exploration &rarr;</a></p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; 2026 Ekrem Kaan Afşar</span>
+      <span>Hand-written HTML and CSS. No trackers, no cookies.</span>
+    </div>
+  </footer>
+</body>
+</html>

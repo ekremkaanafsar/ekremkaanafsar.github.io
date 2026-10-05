@@ -1,0 +1,45 @@
+# ---- Private documents: never commit ----
+*Profile*.md
+*profile*.md
+*[Tt]ranscript*
+*[Dd]iploma*
+*[Rr]esult*.pdf
+*[Kk]imlik*
+*[Pp]assport*
+*.doc
+*.docx
+# data files dropped in the top folder (the site itself uses none)
+/*.yaml
+/*.yml
+
+# ---- Secrets ----
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+secrets.*
+credentials*
+*token*
+*.sqlite
+
+# ---- Tooling ----
+.claude/
+
+# ---- Private notes and templates (local only) ----
+/_private/
+
+# ---- OS files ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Editors ----
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace

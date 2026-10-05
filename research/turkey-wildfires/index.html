@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Partisanship, Landed Elites and Wildfire Politics in Turkey | Kaan Afşar</title>
+  <meta name="description" content="Sole-authored work in progress by Kaan Afsar: a municipality-year panel of about 1,389 Turkish municipalities (2002-2025) built from NASA FIRMS VIIRS fire detections, DBSCAN clustering and a PCA-based Landed Elite Index.">
+  <link rel="canonical" href="https://ekremkaanafsar.github.io/research/turkey-wildfires/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="A Geospatial Analysis of Municipal Partisanship, Landed Elites, and Wildfire Politics in Turkey">
+  <meta property="og:description" content="Satellite fire detections, clustering and panel models across about 1,389 Turkish municipalities, 2002-2025.">
+  <meta property="og:url" content="https://ekremkaanafsar.github.io/research/turkey-wildfires/">
+  <meta name="theme-color" content="#0b6e69">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script src="/assets/js/site.js" defer></script>
+  <script src="/assets/js/charts.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/" aria-label="Kaan Afşar, home">
+        <img src="/assets/img/favicon.svg" alt="" width="28" height="28"><span>Kaan Afşar</span>
+      </a>
+      <nav aria-label="Main">
+        <ul class="nav">
+          <li><a href="/research/" aria-current="page">Research</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/cv/">CV</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="paper-hero topo">
+      <div class="wrap">
+        <p class="crumbs"><a href="/research/">Research</a> / Work in progress</p>
+        <span class="status wip">Work in progress</span>
+        <h1 style="margin-top:16px">A Geospatial Analysis of Municipal Partisanship, Landed Elites, and Wildfire Politics in Turkey</h1>
+        <p class="authors"><strong>Kaan Afsar</strong> (sole author)</p>
+        <dl class="glance">
+          <div><dt>Unit</dt><dd>Municipality-year panel</dd></div>
+          <div><dt>Coverage</dt><dd>~1,389 Turkish municipalities, 2002-2025</dd></div>
+          <div><dt>Fire data</dt><dd>NASA FIRMS VIIRS detections, clustered with DBSCAN</dd></div>
+          <div><dt>Methods</dt><dd>Count, hurdle and fixed-effects models; planned RDD</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <div class="wrap article">
+      <nav class="toc" aria-label="On this page">
+        <ol>
+          <li><a href="#question">The question</a></li>
+          <li><a href="#pipeline">Building the panel</a></li>
+          <li><a href="#methods">Methods</a></li>
+          <li><a href="#map">Map</a></li>
+          <li><a href="#status">Status and next steps</a></li>
+        </ol>
+      </nav>
+
+      <div class="article-body">
+        <section id="question" aria-labelledby="h-question">
+          <h2 id="h-question">The question</h2>
+          <p>Wildfires are an environmental outcome, but they are also political. This project asks how <strong>municipal partisanship</strong> and <strong>landed elites</strong> relate to wildfire outcomes across Turkey's municipalities.</p>
+        </section>
+
+        <section id="pipeline" aria-labelledby="h-pipeline">
+          <h2 id="h-pipeline">Building the panel</h2>
+          <p>The heart of the project is a dataset built end to end from messy raw sources: a <strong>municipality-year panel of about 1,389 Turkish municipalities from 2002 to 2025</strong>.</p>
+          <ul>
+            <li><strong>Fires from space.</strong> NASA FIRMS VIIRS satellite fire detections, clustered in space and time with DBSCAN.</li>
+            <li><strong>Landed elites.</strong> A Landed Elite Index built with principal components analysis (PCA).</li>
+            <li><strong>Environmental controls.</strong> ERA5 reanalysis and ESA Copernicus data.</li>
+          </ul>
+
+          <figure class="diagram">
+            <svg class="dg" viewBox="0 0 560 540" role="img" aria-labelledby="fig1-t fig1-d">
+              <title id="fig1-t">Data pipeline for the wildfire panel</title>
+              <desc id="fig1-d">Three sources feed one panel. NASA FIRMS VIIRS fire detections are clustered with DBSCAN into fire events. A Landed Elite Index is built with PCA. ERA5 and Copernicus provide controls. All three are joined into a municipality-year panel of about 1,389 municipalities from 2002 to 2025, which feeds count, hurdle and fixed-effects models, with a regression discontinuity design planned.</desc>
+              <defs>
+                <marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0 0 L10 5 L0 10 z" class="head"/>
+                </marker>
+              </defs>
+
+              <!-- Sources -->
+              <rect x="10" y="10" width="170" height="84" rx="12" class="box-amber"/>
+              <text x="95" y="44" text-anchor="middle" font-size="16" font-weight="600">NASA FIRMS</text>
+              <text x="95" y="68" text-anchor="middle" font-size="13" class="sub">VIIRS fire detections</text>
+
+              <rect x="195" y="10" width="170" height="84" rx="12" class="box-teal"/>
+              <text x="280" y="44" text-anchor="middle" font-size="16" font-weight="600">Landed Elite</text>
+              <text x="280" y="68" text-anchor="middle" font-size="13" class="sub">Index (PCA)</text>
+
+              <rect x="380" y="10" width="170" height="84" rx="12" class="box"/>
+              <text x="465" y="44" text-anchor="middle" font-size="16" font-weight="600">ERA5 &amp; Copernicus</text>
+              <text x="465" y="68" text-anchor="middle" font-size="13" class="sub">environmental controls</text>
+
+              <!-- Clustering step -->
+              <path d="M95 96 V126" class="arrow" marker-end="url(#ah2)"/>
+              <rect x="10" y="130" width="170" height="70" rx="12" class="box-amber"/>
+              <text x="95" y="160" text-anchor="middle" font-size="15" font-weight="600">DBSCAN</text>
+              <text x="95" y="182" text-anchor="middle" font-size="13" class="sub">space-time clusters</text>
+
+              <path d="M95 202 V246" class="arrow" marker-end="url(#ah2)"/>
+              <path d="M280 96 V246" class="arrow" marker-end="url(#ah2)"/>
+              <path d="M465 96 V246" class="arrow" marker-end="url(#ah2)"/>
+
+              <!-- Panel -->
+              <rect x="10" y="250" width="540" height="96" rx="14" class="box-teal"/>
+              <text x="280" y="288" text-anchor="middle" font-size="19" font-weight="700">Municipality-year panel</text>
+              <text x="280" y="318" text-anchor="middle" font-size="15" class="mono-t sub">~1,389 municipalities × 2002-2025</text>
+
+              <path d="M280 348 V382" class="arrow" marker-end="url(#ah2)"/>
+
+              <!-- Models -->
+              <rect x="10" y="386" width="540" height="62" rx="12" class="box"/>
+              <text x="280" y="423" text-anchor="middle" font-size="16" font-weight="600">Count, hurdle and fixed-effects models</text>
+
+              <path d="M280 450 V478" class="arrow" stroke-dasharray="4 4" marker-end="url(#ah2)"/>
+
+              <rect x="110" y="482" width="340" height="50" rx="12" class="box-dash"/>
+              <text x="280" y="512" text-anchor="middle" font-size="15" class="sub">Planned: regression discontinuity</text>
+            </svg>
+            <figcaption>Figure 1. From satellite detections and indices to a municipality-year panel.</figcaption>
+          </figure>
+        </section>
+
+        <section id="methods" aria-labelledby="h-methods">
+          <h2 id="h-methods">Methods</h2>
+          <p>The analysis uses <strong>count and hurdle models</strong> and <strong>fixed-effects</strong> specifications. A <strong>regression discontinuity design</strong> is planned as the next step. I run all of the statistical analyses in Stata and R.</p>
+          <figure class="figure-soon" role="group" aria-label="Chart coming soon">
+            <svg class="skeleton" viewBox="0 0 560 230" aria-hidden="true" focusable="false">
+              <line x1="330" y1="8" x2="330" y2="196" class="sk-ref"/>
+              <rect x="20" y="30" width="130" height="12" rx="6" class="sk"/>
+              <rect x="40" y="80" width="110" height="12" rx="6" class="sk"/>
+              <rect x="10" y="130" width="140" height="12" rx="6" class="sk"/>
+              <rect x="50" y="180" width="100" height="12" rx="6" class="sk"/>
+              <line x1="350" y1="36" x2="470" y2="36" class="sk-line"/><circle cx="410" cy="36" r="7" class="sk-strong"/>
+              <line x1="250" y1="86" x2="360" y2="86" class="sk-line"/><circle cx="305" cy="86" r="7" class="sk-strong"/>
+              <line x1="370" y1="136" x2="520" y2="136" class="sk-line"/><circle cx="445" cy="136" r="7" class="sk-strong"/>
+              <line x1="290" y1="186" x2="380" y2="186" class="sk-line"/><circle cx="335" cy="186" r="7" class="sk-strong"/>
+              <rect x="180" y="214" width="34" height="8" rx="4" class="sk"/><rect x="313" y="214" width="34" height="8" rx="4" class="sk"/><rect x="446" y="214" width="34" height="8" rx="4" class="sk"/>
+            </svg>
+            <span class="soon-badge">Chart coming soon</span>
+            <figcaption>Figure 3. Model results. <span class="tba">Coming soon</span></figcaption>
+          </figure>
+        </section>
+
+        <section id="map" aria-labelledby="h-map">
+          <h2 id="h-map">Map</h2>
+          <figure class="figure-soon" role="group" aria-label="Map coming soon">
+            <span class="skeleton-map" aria-hidden="true"></span>
+            <span class="soon-badge">Map coming soon</span>
+            <figcaption>Figure 2. Fire clusters across Turkey's municipalities. <span class="tba">Coming soon</span></figcaption>
+          </figure>
+        </section>
+
+        <section id="status" aria-labelledby="h-status">
+          <h2 id="h-status">Status and next steps</h2>
+          <div class="callout">
+            <p><strong>Work in progress, sole author.</strong> Count, hurdle and fixed-effects models on the municipality-year panel, with a regression discontinuity design planned.</p>
+          </div>
+        </section>
+
+        <p><a href="/research/mineral-holdouts/">&larr; Previous: Hold Outs in Mineral Exploration</a> &nbsp;&middot;&nbsp; <a href="/research/">All research &rarr;</a></p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; 2026 Ekrem Kaan Afşar</span>
+      <span>Hand-written HTML and CSS. No trackers, no cookies.</span>
+    </div>
+  </footer>
+</body>
+</html>

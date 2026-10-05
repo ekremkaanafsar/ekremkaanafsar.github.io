@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hold Outs in Mineral Exploration and Development | Kaan Afşar</title>
+  <meta name="description" content="Working paper by Holahan, Farrer and Afsar: 254 New York State compulsory pooling orders and 4,600+ coded properties compare hold-outs under vertical and horizontal wells. Under review.">
+  <link rel="canonical" href="https://ekremkaanafsar.github.io/research/mineral-holdouts/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Hold Outs in Mineral Exploration and Development">
+  <meta property="og:description" content="Do landowners hold out more against horizontal fracking than conventional vertical wells? Evidence from 254 New York State pooling orders.">
+  <meta property="og:url" content="https://ekremkaanafsar.github.io/research/mineral-holdouts/">
+  <meta name="theme-color" content="#0b6e69">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script src="/assets/js/site.js" defer></script>
+  <script src="/assets/js/charts.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/" aria-label="Kaan Afşar, home">
+        <img src="/assets/img/favicon.svg" alt="" width="28" height="28"><span>Kaan Afşar</span>
+      </a>
+      <nav aria-label="Main">
+        <ul class="nav">
+          <li><a href="/research/" aria-current="page">Research</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/cv/">CV</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="paper-hero topo">
+      <div class="wrap">
+        <p class="crumbs"><a href="/research/">Research</a> / Working paper</p>
+        <span class="status">Under review</span>
+        <h1 style="margin-top:16px">Hold Outs in Mineral Exploration and Development</h1>
+        <p class="authors">Robert Holahan, Ben Farrer and <strong>Kaan Afsar</strong></p>
+        <dl class="glance">
+          <div><dt>Data</dt><dd>254 New York State compulsory pooling orders</dd></div>
+          <div><dt>Coverage</dt><dd>2004-2014, 4,600+ individually coded properties</dd></div>
+          <div><dt>Comparison</dt><dd>Vertical wells vs horizontal hydraulic fracturing</dd></div>
+          <div><dt>Methods</dt><dd>Logit models, in Stata and R</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <div class="wrap article">
+      <nav class="toc" aria-label="On this page">
+        <ol>
+          <li><a href="#question">The question</a></li>
+          <li><a href="#data">Data</a></li>
+          <li><a href="#findings">Key findings</a></li>
+          <li><a href="#role">My role</a></li>
+          <li><a href="#status">Status and materials</a></li>
+        </ol>
+      </nav>
+
+      <div class="article-body">
+        <section id="question" aria-labelledby="h-question">
+          <h2 id="h-question">The question</h2>
+          <p>Oil and gas drilling units bring many neighbouring properties together, and some owners hold out. This paper asks whether <strong>economic hold-out behaviour differs between conventional vertical wells and unconventional horizontal hydraulic fracturing</strong>, and whether holding out looks like sincere opposition or strategic rent-seeking.</p>
+        </section>
+
+        <section id="data" aria-labelledby="h-data">
+          <h2 id="h-data">Data</h2>
+          <p>The evidence comes from <strong>254 New York State compulsory pooling orders issued between 2004 and 2014</strong>, covering <strong>more than 4,600 individually coded properties</strong>. Every property record was coded individually and went through systematic verification and quality checks.</p>
+
+          <figure class="diagram">
+            <svg class="dg" viewBox="0 0 560 350" role="img" aria-labelledby="fig1-t fig1-d">
+              <title id="fig1-t">From legal orders to a property-level dataset</title>
+              <desc id="fig1-d">Flow diagram. 254 New York State pooling orders from 2004 to 2014 are coded into more than 4,600 individual property records. Logit models then estimate which properties hold out, comparing vertical and horizontal wells, and marginal cross-boundary properties.</desc>
+              <defs>
+                <marker id="ah1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0 0 L10 5 L0 10 z" class="head"/>
+                </marker>
+              </defs>
+
+              <rect x="10" y="10" width="245" height="96" rx="12" class="box"/>
+              <text x="132" y="52" text-anchor="middle" font-size="22" font-weight="700" class="mono-t">254</text>
+              <text x="132" y="76" text-anchor="middle" font-size="15">compulsory pooling orders</text>
+              <text x="132" y="96" text-anchor="middle" font-size="13" class="sub">New York State, 2004-2014</text>
+
+              <rect x="305" y="10" width="245" height="96" rx="12" class="box-teal"/>
+              <text x="427" y="52" text-anchor="middle" font-size="22" font-weight="700" class="mono-t teal">4,600+</text>
+              <text x="427" y="76" text-anchor="middle" font-size="15">properties, hand-coded</text>
+              <text x="427" y="96" text-anchor="middle" font-size="13" class="sub">verified and quality-checked</text>
+
+              <path d="M258 58 H300" class="arrow" marker-end="url(#ah1)"/>
+              <path d="M427 108 V146" class="arrow" marker-end="url(#ah1)"/>
+
+              <rect x="10" y="150" width="540" height="70" rx="12" class="box"/>
+              <text x="280" y="181" text-anchor="middle" font-size="17" font-weight="600">Logit models</text>
+              <text x="280" y="204" text-anchor="middle" font-size="14" class="sub">Does a property hold out?</text>
+
+              <path d="M140 222 V258" class="arrow" marker-end="url(#ah1)"/>
+              <path d="M420 222 V258" class="arrow" marker-end="url(#ah1)"/>
+
+              <rect x="10" y="262" width="260" height="78" rx="12" class="box-amber"/>
+              <text x="140" y="294" text-anchor="middle" font-size="15" font-weight="600">Vertical vs horizontal</text>
+              <text x="140" y="318" text-anchor="middle" font-size="14" class="sub">well type</text>
+
+              <rect x="290" y="262" width="260" height="78" rx="12" class="box-amber"/>
+              <text x="420" y="294" text-anchor="middle" font-size="15" font-weight="600">Marginal, cross-boundary</text>
+              <text x="420" y="318" text-anchor="middle" font-size="14" class="sub">properties</text>
+            </svg>
+            <figcaption>Figure 1. How the dataset was built and what the models compare.</figcaption>
+          </figure>
+        </section>
+
+        <section id="findings" aria-labelledby="h-findings">
+          <h2 id="h-findings">Key findings</h2>
+          <div class="finding"><span class="num">01</span><p><strong>Horizontal wells generate significantly more hold-out behaviour overall</strong> than conventional vertical wells.</p></div>
+          <div class="finding"><span class="num">02</span><p><strong>Marginal, cross-boundary properties are significantly less likely to hold out.</strong> This pattern is consistent with sincere opposition rather than strategic rent-seeking.</p></div>
+          <figure class="figure-soon" role="group" aria-label="Map coming soon">
+            <span class="skeleton-map" aria-hidden="true"></span>
+            <span class="soon-badge">Map coming soon</span>
+            <figcaption>Figure 2. Map of well units from the pooling orders. <span class="tba">Coming soon</span></figcaption>
+          </figure>
+        </section>
+
+        <section id="role" aria-labelledby="h-role">
+          <h2 id="h-role">My role</h2>
+          <ul>
+            <li>Managed the dataset of 4,600+ individually coded property records from the pooling orders, with systematic verification and quality checks.</li>
+            <li>Contributed GIS-coded well-unit mapping.</li>
+            <li>I run all of the statistical analyses in Stata and R.</li>
+          </ul>
+        </section>
+
+        <section id="status" aria-labelledby="h-status">
+          <h2 id="h-status">Status and materials</h2>
+          <div class="callout">
+            <p><strong>Under review.</strong> Presented at the Midwest Political Science Association (MPSA) Annual Meeting, Chicago, IL, April 2025.</p>
+          </div>
+          <figure class="figure-img">
+            <a href="/images/mpsa-2025.webp" data-lightbox>
+              <img src="/images/mpsa-2025.webp" width="800" height="961" loading="lazy" style="max-width:420px" alt="Kaan Afşar and Prof. Robert Holahan standing beside a projected title slide reading Hold-out in mineral extraction: Evidence from New York.">
+            </a>
+            <figcaption>Presenting the paper with Prof. Robert Holahan at MPSA 2025, Chicago.</figcaption>
+          </figure>
+        </section>
+
+        <p><a href="/research/energy-preferences/">&larr; Previous: Preference Formation</a> &nbsp;&middot;&nbsp; <a href="/research/turkey-wildfires/">Next: Wildfire Politics in Turkey &rarr;</a></p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; 2026 Ekrem Kaan Afşar</span>
+      <span>Hand-written HTML and CSS. No trackers, no cookies.</span>
+    </div>
+  </footer>
+</body>
+</html>
